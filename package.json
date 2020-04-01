@@ -1,0 +1,42 @@
+{
+  "name": "html-rendering-benchmark",
+  "version": "0.0.1",
+  "repository": "https://github.com/tmunz/html-rendering-benchmark",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server -d --hot --mode development",
+    "build": "del-cli -f ./docs && webpack",
+    "lint": "eslint ./src/**/*{.js,.ts*}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@babel/preset-react": "7.8.3",
+    "@babel/preset-typescript": "7.8.3",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/webpack-env": "^1.15.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "babel-loader": "^8.0.6",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "7.19.0",
+    "file-loader": "^5.0.2",
+    "fork-ts-checker-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}

@@ -5,10 +5,9 @@ export function App() {
   const [regularReact, setRegularReact] = useState(null);
   const [stringReact, setStringReact] = useState(null);
 
-  function createRegularReact() {
+  function createRegularReact(items: number) {
     let svg = null;
     let strategy = 1;
-    const items = 5000;
 
     console.time("create");
     if (strategy === 0) {
@@ -30,17 +29,16 @@ export function App() {
           transform={`rotate(${i} 200 200)`}
         />);
       }
-      // svg = <g>{svg}</g>;
+      svg = <g>{svg}</g>;
     }
     console.timeEnd("create");
     console.time("render");
     return svg;
   }
 
-  function createStringReact() {
+  function createStringReact(items: number) {
     let svg = null;
     let strategy = 0;
-    const items = 5000;
 
     console.time("create");
     if (strategy === 0) {
@@ -72,7 +70,10 @@ export function App() {
         </svg>
         <div>
           <button onClick={() => setRegularReact(null)}>clear</button>
-          <button onClick={() => setRegularReact(createRegularReact())}>create</button>
+          <button onClick={() => {
+            setRegularReact(createRegularReact(5000))
+            setTimeout(() => setRegularReact(createRegularReact(2500)), 2000);
+          }}>create</button>
         </div>
       </div>
       <div>
@@ -83,7 +84,10 @@ export function App() {
         </svg>
         <div>
           <button onClick={() => setStringReact(null)}>clear</button>
-          <button onClick={() => setStringReact(createStringReact())}>create</button>
+          <button onClick={() => {
+            setStringReact(createStringReact(5000))
+            setTimeout(() => setStringReact(createStringReact(2500)), 2000);
+          }}>create</button>
         </div>
       </div>
     </div>
